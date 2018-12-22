@@ -3,18 +3,17 @@ pipeline {
     stages {
         stage('CloneRepo') { 
             steps {
-                sh "git clone https://github.com/mayank9998/myapp.git"
-                sh " mvn clean -f myapp"
+                sh " mvn clean "
             }
         }
         stage('TEST') { 
             steps {
-                sh "mvn test -f myapp"
+                sh "mvn test"
             }
         }
         stage('Deploy') { 
             steps {
-                sh "mvn package -f myapp"
+                sh "mvn package"
             }
         }
     }
