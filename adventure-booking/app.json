@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "plugins": [
+      "expo-router"
+    ],
+    "name": "adventure-booking",
+    "slug": "adventure-booking"
+  }
+}
