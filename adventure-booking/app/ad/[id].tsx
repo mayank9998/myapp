@@ -1,5 +1,6 @@
 import { useLocalSearchParams, Stack, useRouter } from 'expo-router';
-import { Image, ScrollView, Text, View, Button } from 'react-native';
+import { ScrollView, Text, View, Button } from 'react-native';
+import { Image } from 'expo-image';
 import { getAdById } from '../../lib/data';
 import { Screen } from '../../components/Screen';
 
@@ -22,7 +23,7 @@ export default function AdDetailsScreen() {
     <Screen>
       <Stack.Screen options={{ title: ad.title }} />
       <ScrollView contentContainerStyle={{ paddingBottom: 24 }}>
-        <Image source={{ uri: ad.imageUrl }} style={{ width: '100%', height: 260 }} />
+        <Image source={{ uri: ad.imageUrl }} style={{ width: '100%', height: 280 }} contentFit="cover" transition={200} />
         <View style={{ padding: 16, gap: 8 }}>
           <Text style={{ fontSize: 22, fontWeight: '700' }}>{ad.title}</Text>
           <Text style={{ color: '#666' }}>{ad.category} • {ad.location}</Text>

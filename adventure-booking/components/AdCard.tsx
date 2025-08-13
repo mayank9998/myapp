@@ -1,5 +1,6 @@
-import { Image, Pressable, Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
+import { Image } from 'expo-image';
 
 export type AdCardProps = {
   id: string;
@@ -19,8 +20,13 @@ export function AdCard({ id, title, location, price, currency, imageUrl, categor
       onPress={() => router.push(`/ad/${id}`)}
       style={{ backgroundColor: '#fff', borderRadius: 12, overflow: 'hidden', borderColor: '#eee', borderWidth: 1 }}
     >
-      <Image source={{ uri: imageUrl }} accessibilityLabel={title} style={{ width: '100%', height: 160 }} />
-      <View style={{ padding: 12, gap: 4 }}>
+      <Image
+        source={{ uri: imageUrl }}
+        style={{ width: '100%', height: 180 }}
+        contentFit="cover"
+        transition={200}
+      />
+      <View style={{ padding: 12, gap: 6 }}>
         <Text style={{ fontSize: 16, fontWeight: '600' }}>{title}</Text>
         <Text style={{ color: '#666' }}>{category} • {location}</Text>
         <Text style={{ marginTop: 4, fontWeight: '700' }}>
